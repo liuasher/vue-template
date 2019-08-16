@@ -11,7 +11,7 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const isDev = process.env.NODE_ENV == 'development';
+const isDev = process.env.NODE_ENV === 'development';
 // console.log(process.env);
 // console.log(process.env.IS_ANALYZ);
 module.exports = {

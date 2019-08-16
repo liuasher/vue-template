@@ -74,7 +74,7 @@
                       if (tempValue === '') {
                         return;
                       }
-                      if (tempValue != params.row.defaultValue) {
+                      if (tempValue !== params.row.defaultValue) {
                         let el = event.target;
                         this.updatePointCol(params.column.key, params.row, tempValue, params.row.defaultValue, el);
                       }
@@ -93,12 +93,12 @@
             render: (h, params) => {
               return h('i-switch', {
                 props: {
-                  value: (params.row.display == "1")
+                  value: (params.row.display === "1")
                 },
                 on: {
                   'on-change': (status) => {
                     let el = event.target;
-                    this.updatePointCol(params.column.key, params.row, status ? 1 : 0, params.row.display == "1", el);
+                    this.updatePointCol(params.column.key, params.row, status ? 1 : 0, params.row.display === "1", el);
                   }
                 }
               });
@@ -233,7 +233,7 @@
           this.pointTypeList = res;
           if (res.length > 0) {
             let pointType = res[0].pointType;
-            this.activeTab = this.activeTab == 'all' ? pointType : this.activeTab;
+            this.activeTab = this.activeTab === 'all' ? pointType : this.activeTab;
             this.getPointColList();
           }
         });
@@ -242,9 +242,9 @@
       /**
        * 各类测点的字段数量表查询
        */
-      getPointColList(pointType) {
+      getPointColList() {
         this.tableLoad = true;
-        if (this.activeTab == 'all') {
+        if (this.activeTab === 'all') {
           this.tableLoad = false;
           return;
         };
@@ -271,9 +271,6 @@
           colId: params.colId,
           updateDate: this.$utils.getCurrentUpdate()
         }
-        if (type === '') {
-
-        }
         switch (type) {
           case 'display':
           case 'sortNum':
@@ -296,7 +293,7 @@
               this.updateFailHandle(type, oldVal, el)
             }
           )
-          .catch(err => {
+          .catch(() => {
               this.updateFailHandle(type, oldVal, el)
           })
 

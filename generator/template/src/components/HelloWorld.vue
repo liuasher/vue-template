@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <p>
       {{$t('guide')}} <br>
       {{$t('checkHere')}}
@@ -14,7 +13,7 @@
     name: 'HelloWorld',
     props: {
       msg: String,
-      default: ''
+      default: 'not yet'
     }
   }
 
