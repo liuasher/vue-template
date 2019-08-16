@@ -121,7 +121,7 @@
                       if (tempValue === '') {
                         return;
                       }
-                      if (tempValue != params.row.sortNum) {
+                      if (tempValue !== params.row.sortNum) {
                         let el = event.target;
                         this.updatePointCol(params.column.key, params.row, tempValue, params.row.sortNum, el);
                       }
@@ -289,7 +289,7 @@
                 this.updateFailHandle(type, oldVal, el)
               }
             },
-            err => {
+            () => {
               this.updateFailHandle(type, oldVal, el)
             }
           )
