@@ -1,25 +1,47 @@
 module.exports = (api, options, rootOptions) => {
-  // 命令
+  /** 
+   * 指令
+   */
   api.extendPackage({
-    scripts: {
+    /** script */
+    "scripts": {
       "dev": "vue-cli-service serve",
       "build": "vue-cli-service build",
       "analyz": "vue-cli-service build --mode analyz",
       "lint": "vue-cli-service lint",
       "test:unit": "vue-cli-service test:unit"
     },
+    /** script注释 */
     "scripts-info": {
       "dev": "运行开发服务器",
       "build": "生产环境执行构建",
+      "lint": "eslint修正",
       "analyz": "生产环境执行构建打包分析",
-    }
+    },
+    /** eslint规范 */
+    "eslintConfig": {
+      "root": true,
+      "env": {
+        "node": true
+      },
+      "extends": [
+        "plugin:vue/essential",
+        "@vue/airbnb"
+      ],
+      "rules": {},
+      "parserOptions": {
+        "parser": "babel-eslint"
+      }
+    },
   })
 
-  // 安装一些基础公共库
+  /**
+   * 不限定UI框架，iview或者element
+   * 国际化ui组件需要再main.js中独立引入
+   */
   api.extendPackage({
     dependencies: {
       "axios": "^0.18.0",
-      "iview": "^3.1.3",
       "vue": "^2.5.17",
       "vue-i18n": "^8.2.1",
       "vue-router": "^3.0.1",
