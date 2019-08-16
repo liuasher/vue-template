@@ -12,8 +12,10 @@
   export default {
     name: 'HelloWorld',
     props: {
-      msg: String,
-      default: 'not yet'
+      msg: {
+        type: String,
+        default: ''
+      }
     }
   }
 

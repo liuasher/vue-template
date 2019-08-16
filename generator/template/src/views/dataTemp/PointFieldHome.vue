@@ -333,7 +333,7 @@
     watch: {
       activeTab: function(Val, oldVal) {
         this.page.pages = 1;
-        if (typeof oldVal != 'undefined' && oldVal != 'all') {
+        if (typeof oldVal !== 'undefined' && oldVal !== 'all') {
           this.getPointColList();
         }
       }
