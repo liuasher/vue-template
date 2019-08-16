@@ -1,0 +1,9 @@
+{
+  "useConfigFiles": true,
+  "packageManager": "npm",
+  "useTaobaoRegistry": false,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-eslint": {}
+  }
+}
